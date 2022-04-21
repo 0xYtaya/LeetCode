@@ -9,7 +9,6 @@ var spreadNumberToArray = function(x){
 
 var isPalindrome = function(x) {
 	if (x < 0) return false;
-	else
-		x = spreadNumberToArray(x)
+	x = spreadNumberToArray(x)
     return (x.every((e,i) =>  e == x[x.length - i - 1]))
 };
