@@ -19,7 +19,6 @@ function value(r) {
 var romanToInt = function(s) {
     let n = 0
     for (let i = 0; i < s.length; i++)
-    {
         if (i + 1 < s.length)
         {
             if (value(s[i]) >=  value(s[i + 1]))
@@ -32,6 +31,5 @@ var romanToInt = function(s) {
         }
         else
             n += value(s[i])
-    }
     return n
 };
