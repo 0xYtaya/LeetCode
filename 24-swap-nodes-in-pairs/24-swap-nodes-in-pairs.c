@@ -1,27 +1,21 @@
-struct ListNode* swapPairs(struct ListNode* head){
-    struct ListNode* dummy = malloc(sizeof(struct ListNode));
-	struct ListNode* current;
-	struct ListNode* prev;
-	struct ListNode* nextpair;
-	struct ListNode* second;
-    
-    if (!head || !head->next) return head;
+struct ListNode *swapPairs(struct ListNode *head)
+{
+	struct ListNode *curr, *newhead, *nextpair, *prev, *dummy = malloc(sizeof(struct ListNode));
+
+	dummy->next = head;
 	prev = dummy;
-	current = head;
-	while (current && current->next)
+	curr = head;
+	if (!head || !head->next)
+		return head;
+	while (curr && curr->next)
 	{
-		// save ptrs
-		nextpair = current->next->next;
-		second = current->next;
-
-		// reverse ptrs
-		second->next = current;
-		current->next = nextpair;
-		prev->next = second;
-
-		// update ptrs
-		prev = current;
-		current = nextpair;
+		newhead = curr->next;
+		nextpair = curr->next->next;
+		newhead->next = curr;
+		curr->next = nextpair;
+		prev->next = newhead;
+		prev = curr;
+		curr = nextpair;
 	}
 	return dummy->next;
 }
