@@ -10,5 +10,4 @@ void moveZeroes(int* nums, int numsSize){
     }
     if (j < numsSize)
         bzero(nums + j, sizeof(int) * (numsSize - j));
-        // nums[j++] = 0;
 }
