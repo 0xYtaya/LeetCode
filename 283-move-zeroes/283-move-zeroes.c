@@ -8,6 +8,7 @@ void moveZeroes(int* nums, int numsSize){
             nums[j++] = nums[i];
         i++;
     }
-    while (j < numsSize)
-        nums[j++] = 0;
+    if (j < numsSize)
+        bzero(nums + j, sizeof(int) * (numsSize - j));
+        // nums[j++] = 0;
 }
