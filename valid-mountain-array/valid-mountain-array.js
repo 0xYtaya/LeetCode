@@ -7,6 +7,6 @@ var validMountainArray = function(nums) {
     if (i == j) return false;
 	while (nums[j] < nums[j - 1])
 		j--;
-    if (j == 0) return false;
+    if (j <= 0) return false;
 	return (nums[i] == nums[j] && i == j);
 };
