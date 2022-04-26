@@ -13,7 +13,7 @@ int* replaceElements(int* arr, int arrSize, int* returnSize){
     {
         int j = 0;
         for (int i = 1; i < arrSize;i++)
-            ret[j++] = max(&arr[i],arrSize - i);
+            ret[j++] = max(arr + i ,arrSize - i);
         *returnSize = arrSize;
         if (arrSize >= 1)
             ret[j] = -1;
