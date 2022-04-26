@@ -10,7 +10,5 @@ var removeDuplicates = function(arr) {
 	}
 	for (let i = 0; i < arrD.length; i++)
 		arr[i] = arrD[i]
-	if (arrD.length == 0)
-		return 0;
 	return (arrD.length)
 };
